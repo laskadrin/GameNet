@@ -1,0 +1,18 @@
+[
+  {
+    "Id": 1,
+    "Name": "Activision Blizzard"
+  },
+  {
+    "Id": 2,
+    "Name": "Electronic Arts"
+  },
+  {
+    "Id": 3,
+    "Name": "Sony Playstation"
+  },
+  {
+    "Id": 4,
+    "Name": "Other"
+  }
+]

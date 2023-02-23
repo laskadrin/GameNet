@@ -1,0 +1,14 @@
+[
+  {
+    "Id": 1,
+    "Name": "Multi-Player"
+  },
+  {
+    "Id": 2,
+    "Name": "Cooperative"
+  },
+  {
+    "Id": 3,
+    "Name": "Single-Player"
+  }
+]
