@@ -13,7 +13,7 @@ You may test API requests by navigating to `http://localhost:5000/swagger/index.
 
 ## Client
 
-Run `ng serve` to run the angular client server.
+Run `ng serve` with Angular CLI while in /client folder to run the angular client server.
 Navigate to `http://localhost:4200` in your browser to open the client web-site.
 
 ### Others
