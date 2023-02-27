@@ -1,3 +1,4 @@
+
 import { ErrorInterceptor } from './core/interceptors/error.interceptor';
 import { ShopModule } from './shop/shop.module';
 import { CoreModule } from './core/core.module';
@@ -9,11 +10,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HeaderComponent } from './core/header/header.component';
+
 
 
 import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 @NgModule({
   declarations: [
@@ -28,8 +30,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatExpansionModule,
     HttpClientModule,
+    NgxSpinnerModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

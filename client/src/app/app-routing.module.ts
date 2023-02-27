@@ -7,8 +7,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'test-error', pathMatch: 'full' },
-  { path: 'test-error', component: TestErrorComponent },
+  { path: '', redirectTo: 'shop', pathMatch: 'full' },
+  { path: 'shop', component: ShopComponent },
   { path: 'shop/:id', component: ProductDetailsComponent },
   { path: 'server-error', component: ServerErrorComponent },
   { path: 'not-found', component: NotFoundComponent },
