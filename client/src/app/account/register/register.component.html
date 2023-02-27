@@ -1,0 +1,37 @@
+<div class="main-container">
+    <div class="login-container">
+
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <h1>Sign Up</h1>
+            <div class="input-section">
+                <input type="text" class="input" placeholder="Your Name" formControlName="displayName">
+                <div class="input__error"
+                    *ngIf="registerForm.get('displayName').invalid && registerForm.get('displayName').touched && registerForm.get('displayName').errors['required']">
+                    Name is required</div>
+            </div>
+            <div class="input-section">
+                <input type="email" class="input" placeholder="E-mail" formControlName="email">
+                <div class="input__error"
+                    *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched && registerForm.get('email').errors['required']">
+                    Email address is required</div>
+
+                <div class="input__error"
+                    *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched && registerForm.get('email').errors['email']">
+                    Email address is not valid</div>
+            </div>
+            <div class="input-section">
+                <input type="password" class="input" placeholder="Password" formControlName="password">
+                <div class="input__error"
+                    *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched && registerForm.get('password').errors['required']">
+                    Password is required</div>
+            </div>
+            <div *ngIf="errors">
+                <div class=input__error *ngFor="let error of errors">
+                    {{error}}
+                </div>
+            </div>
+            <button class="button--start" type="submit">Register</button>
+        </form>
+
+    </div>
+</div>

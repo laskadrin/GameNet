@@ -12,6 +12,13 @@ const routes: Routes = [
   { path: 'shop/:id', component: ProductDetailsComponent },
   { path: 'server-error', component: ServerErrorComponent },
   { path: 'not-found', component: NotFoundComponent },
+
+  {
+    path: 'account', loadChildren: () => import('./account/account.module')
+      .then(mod => mod.AccountModule)
+  },
+
+
   { path: '**', redirectTo: '', pathMatch: 'full' },
 
 

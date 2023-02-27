@@ -4,9 +4,18 @@
             <a href="">GameNet</a>
         </div>
         <div class="login-logout">
-            <span class="material-symbols-outlined">
-                logout
-            </span>
+            <ng-container *ngIf="currentUser$ | async">
+                <span>Welcome,</span><span class="welcome">{{(currentUser$ | async).displayName}}!</span>
+                <span class="material-symbols-outlined" (click)="logout()">
+                    logout
+                </span>
+            </ng-container>
+
+            <ng-container *ngIf="(currentUser$ | async) === null">
+                <a href="/account/login"><button class="button">Login</button></a>
+                <a href="/account/register"><button class="button">Sign Up</button></a>
+            </ng-container>
+
         </div>
     </div>
 

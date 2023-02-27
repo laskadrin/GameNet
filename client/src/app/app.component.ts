@@ -1,3 +1,4 @@
+import { AccountService } from 'src/app/account/account.service';
 import { IPagination } from './shared/Models/pagination';
 import { IProduct } from './shared/Models/product';
 import { HttpClient } from '@angular/common/http';
@@ -16,11 +17,21 @@ export class AppComponent implements OnInit {
 
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private accountService: AccountService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    const token = localStorage.getItem('token');
+    if (token) {
+      this.accountService.loadCurrentUser(token).subscribe(() => {
+        console.log('loaded user');
+      }, error => {
+        console.log(error)
+      })
+    }
     this.http.get('http://localhost:5000/api/products').subscribe((response: IPagination) => {
       this.products = response.data;
     }, error => console.log(error))
+
   }
 }

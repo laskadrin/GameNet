@@ -5,6 +5,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -12,12 +14,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatInputModule,
     MatExpansionModule,
     NgxPaginationModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ReactiveFormsModule
   ],
   exports: [
     MatInputModule,
     MatExpansionModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

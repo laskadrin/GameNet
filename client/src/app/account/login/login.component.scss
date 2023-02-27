@@ -1,0 +1,58 @@
+@import '../../../assets/styles/Custom styles/styles-to-import.scss';
+
+.main-container {
+    width: 100%;
+    max-width: 1920px;
+    min-width: 720px;
+    margin: auto;
+
+    p {
+        color: white;
+    }
+
+    .login-container {
+        width: 20%;
+        min-width: 385px;
+        margin: auto;
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 35px auto;
+
+            h1 {
+                color: white;
+            }
+
+
+            .input-section {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                height: 80px;
+                width: 100%;
+
+                .input {
+
+                    margin-top: 30px;
+                    width: 100%;
+
+                    ::placeholder {
+                        font-family: Roboto;
+                    }
+                }
+
+
+            }
+
+
+
+            .button--start {
+                margin-top: 20px;
+                width: 70%;
+                height: 50px;
+            }
+        }
+    }
+}
