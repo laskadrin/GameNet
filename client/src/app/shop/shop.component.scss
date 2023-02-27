@@ -1,0 +1,175 @@
+@import "../../assets/styles/Custom styles/styles-to-import.scss";
+
+
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    width: 100%;
+    max-width: 1920px;
+    min-width: 720px;
+    padding: 35px;
+
+    .main-container-shop {
+        display: flex;
+        flex-direction: column;
+        width: 75vw;
+        min-width: 450px;
+        max-width: 1450px;
+
+        .pagination-header {
+            text-align: center;
+            color: white;
+        }
+
+        .products-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+
+            .product {
+                background-color: #1d1f29;
+                color: white;
+
+                height: 700px;
+                margin: 0px 35px 35px 35px;
+                width: 370px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .product-body {
+                    font-family: Roboto;
+                    display: flex;
+                    flex-direction: column;
+
+
+                    img {
+                        margin-top: 10px;
+                        margin-left: auto;
+                        margin-right: auto;
+                        width: 350px;
+                        height: 430px;
+                    }
+
+                    span,
+                    a {
+                        margin-left: 10px;
+                        margin-top: 10px;
+                        margin-right: 10px;
+                    }
+
+                    .title {
+                        font-size: 25px;
+                        line-height: 25px;
+
+                        color: white;
+
+                    }
+
+                    .price {
+                        font-size: 20px;
+                        line-height: 20px;
+                    }
+                }
+
+
+                .button--start {
+                    font-family: Roboto;
+                    font-weight: 500;
+                    font-size: 16px;
+                    width: 350px;
+                    height: 50px;
+                    margin: 0px 10px 10px 10px;
+                }
+            }
+        }
+    }
+
+
+    .main-container-nav {
+
+        display: flex;
+        flex-direction: column;
+
+        width: 25vw;
+        min-width: 250px;
+        max-width: 450px;
+
+
+
+        .input {
+            width: 100%;
+        }
+
+
+
+
+
+        .search-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            button {
+
+                width: 150px;
+                height: 35px;
+
+            }
+        }
+
+
+
+
+
+        .brands {
+            display: flex;
+            flex-direction: column;
+
+            .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+        }
+
+        .types {
+            display: flex;
+            flex-direction: column;
+
+            .button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+
+
+
+
+    }
+}
+
+::ng-deep .ngx-pagination {
+    padding-left: 5px !important;
+}
+
+::ng-deep .ngx-pagination .current,
+.btn-info {
+    background: linear-gradient(65deg, map_get($mat-warning, A100) 0, map_get($mat-warning, A200) 100%) !important;
+
+}
+
+::ng-deep .ngx-pagination .current:hover {
+    background: linear-gradient(65deg, map_get($mat-warning, A100) 0, map_get($mat-warning, A200) 100%) !important;
+
+}
+
+pagination-controls {
+    margin: auto;
+    background: linear-gradient(65deg, map_get($mat-brand, A100) 0, map_get($mat-brand, A200) 100%);
+}

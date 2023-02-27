@@ -1,0 +1,90 @@
+<div class="main-container">
+    <div class="main-container-nav">
+        <mat-accordion class="categories" multi>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Filters
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <select class="input" (change)="onSortSelected($event.target.value)">
+                    <option *ngFor="let option of sortOptions" [value]="option.value">{{option.name}}</option>
+                </select>
+
+
+
+                <input class="input" type="text" (keyup.enter)="onSearch()" #search placeholder="Search">
+
+                <div class="search-buttons">
+                    <button (click)="onSearch()" class="button--start">Search</button>
+                    <button (click)="onReset()" class="button--warning">Reset</button>
+                </div>
+
+
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Developers
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="brands">
+                    <button [class.button--start]="brand.id === this.shopParams.brandId" [value]="brand.id"
+                        (click)="onBrandSelected(brand.id)" *ngFor="let brand of brands" class="button">{{brand.name}}
+                    </button>
+                </div>
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Types
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="types">
+                    <button [class.button--start]="type.id === this.shopParams.typeId" [value]="type.id"
+                        (click)="onTypeSelected(type.id)" *ngFor="let type of types"
+                        class="button">{{type.name}}</button>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class="sorting">
+            <div class="from-to">
+
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="main-container-shop">
+        <div class="products-container">
+            <div class="product"
+                *ngFor="let product of products | paginate: {itemsPerPage: this.shopParams.pageSize, currentPage: this.shopParams.pageNumber, totalItems: totalCount}">
+                <div class="product-body">
+                    <img src={{product.pictureUrl}} alt="">
+                    <a href="/shop/{{product.id}}" class="title">{{product.name}}</a>
+                    <span class="price"> Price: {{product.price}} $</span>
+                    <span class="description">{{product.description}}</span>
+                </div>
+
+                <button class="button--start">Add to Cart</button>
+            </div>
+
+        </div>
+        <div *ngIf="totalCount && totalCount>0" class="pagination-header">Showing {{(this.shopParams.pageNumber
+            -1)*this.shopParams.pageSize+1}} -
+            {{this.shopParams.pageNumber*shopParams.pageSize
+            >this.totalCount ? this.totalCount : this.shopParams.pageNumber*this.shopParams.pageSize
+            }} of
+            {{totalCount}} results.</div>
+        <div *ngIf="totalCount === 0" class="pagination-header">
+            There are 0 result for this filtes
+        </div>
+        <pagination-controls *ngIf="this.shopParams.pageSize < totalCount" previousLabel="" nextLabel=""
+            (pageChange)="onPageChanged($event)"></pagination-controls>
+    </div>
+
+</div>
