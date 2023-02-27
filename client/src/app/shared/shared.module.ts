@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 @NgModule({
   declarations: [],
   imports: [
@@ -12,6 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatInputModule,
     MatExpansionModule,
     NgxPaginationModule,
+    MatSnackBarModule
   ],
   exports: [
     MatInputModule,
